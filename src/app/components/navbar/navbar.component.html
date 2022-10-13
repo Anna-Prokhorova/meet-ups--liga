@@ -1,0 +1,10 @@
+<nav class="navbar">
+    <a routerLink='' routerLinkActive='active' class="navbar__logo"><img [src]="isDark ? '../../../assets/images/dark-logo.svg':'../../../assets/images/logo.svg'"></a>
+    <div class="navbar__menu menu">
+        <a routerLink='meetups' routerLinkActive='active' class="menu__item" *ngIf="isAuth" [ngClass]="{'_active': currentRoute.includes('/meetups')}">Все митапы</a>
+        <a routerLink='my-meetups' routerLinkActive='active' class="menu__item" *ngIf="isAuth" [ngClass]="{'_active': currentRoute.includes('/my-meetups') }">Мои митапы</a>
+        <a routerLink='users' routerLinkActive='active' class="menu__item" *ngIf="isAdmin" [ngClass]="{'_active': currentRoute.includes('/users') }">Пользователи</a>
+    </div>
+    <a routerLink='' routerLinkActive='active' class="navbar__user" *ngIf="!isAuth"><img [src]="isDark ? '../../../assets/images/dark-user-maxi.svg':'../../../assets/images/user-maxi.svg'"></a>
+    <a class="navbar__user" *ngIf="isAuth" (click)="authService.logout()"><img [src]="isDark ? '../../../assets/images/dark-logout.svg':'../../../assets/images/logout.svg'"></a>
+</nav>

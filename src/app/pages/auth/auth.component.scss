@@ -1,0 +1,95 @@
+.auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__banner {
+        width: 701px;
+        height: 555px;
+        z-index: 1;
+    }
+
+    &__form {
+        z-index: 2;
+        position: relative;
+        left: -200px;
+    }
+}
+
+.form {
+    width: 419px;
+    height: 252px;
+    background: var(--pre-main);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 44px 0px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &__title {
+        font-family: 'Source Sans Pro';
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 35px;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    &__input {
+        width: 271.86px;
+        height: 30px;
+        background: var(--pre-main);
+        border: 2px solid var(--borders);
+        border-radius: 4px;
+        font-size: 16px;
+        display: block;
+        color: var(--dark);
+
+        &.ng-touched.ng-invalid {
+            border-color: var(--accent-hot);
+        }
+    }
+
+    &__button {
+        text-align: center;
+        width: 117.9px;
+        height: 40px;
+        background: var(--dark);
+        border-radius: 4px;
+
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--main);
+        position: relative;
+
+        &:disabled {
+            background: var(--disabled);
+            cursor: not-allowed;
+        }
+    }
+
+    &__register {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        text-decoration-line: underline;
+        color: var(--accent-hot);
+    }
+
+    &__helper {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--accent-hot);
+        margin: 0;
+        position: absolute;
+    }
+
+    &__group {
+        position: relative;
+    }
+}

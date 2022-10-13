@@ -1,0 +1,12 @@
+<form class="user-card" [formGroup]="userForm">
+    <input class="user-card__input _right" name="email" type="email" [disabled]="disable" formControlName="email">
+    <input class="user-card__input" name="password" type="password" [disabled]="disable" formControlName="password">
+    <select class="user-card__input _left" name="role" [disabled]="disable" formControlName="role">
+        <option value="USER">user</option>
+        <option value="ADMIN">admin</option>
+    </select>
+    <button class="user-card__button" (click)="edit()" *ngIf="disable"><img [src]="isDark ? '../../../assets/images/dark-pencil.svg':'../../../assets/images/pencil.svg'"></button>
+    <button class="user-card__button" *ngIf="disable" (click)="deleteUser(user)"><img [src]="isDark ? '../../../assets/images/dark-trash.svg':'../../../assets/images/trash.svg'"></button>
+    <button class="user-card__button" *ngIf="!disable" [disabled]="userForm.invalid" (click)="editUser(user)"><img [src]="isDark ? '../../../assets/images/dark-tick.svg':'../../../assets/images/tick.svg'"></button>
+    <button class="user-card__button" (click)="cancel()" *ngIf="!disable"><img [src]="isDark ? '../../../assets/images/dark-cross.svg':'../../../assets/images/cross.svg'"></button>
+</form>

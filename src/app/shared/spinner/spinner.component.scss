@@ -1,0 +1,18 @@
+.spinner {
+    position: absolute;
+    z-index: 2;
+    top: 35%;
+    left: 46.5%;
+    &__item {
+        animation:fa-beat 0.7s linear infinite;
+    }
+}
+
+@keyframes fa-beat {
+0% {
+    -webkit-transform: rotate(360deg) translateX(50px);
+}
+100% {
+    -webkit-transform: rotate(0deg) translateX(50px)
+}
+}

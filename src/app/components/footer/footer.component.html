@@ -1,0 +1,8 @@
+<footer class="footer">
+    <div>
+    <app-search *ngIf="currentRoute.includes('/meetups')"></app-search>
+    </div>
+    <button class="footer__button" *ngIf="(currentRoute.includes('/meetups') || currentRoute.includes('/my-meetups')) && modalHidden" (click)="showModal()">создать митап</button>
+    <button class="footer__button" *ngIf="currentRoute.includes('/users') && modalHidden" (click)="showModalUser()">добавить пользователя</button>
+    <button class="footer__button" *ngIf="!modalHidden" (click)="showModal()">выйти</button>
+</footer>

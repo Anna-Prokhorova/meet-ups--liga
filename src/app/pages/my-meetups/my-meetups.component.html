@@ -1,0 +1,7 @@
+<div class="meetups">
+    <app-spinner *ngIf="loading"></app-spinner>
+    <app-meetup-card *ngFor="let m of filteredMeetups" [meetup]="m" class="meetups__item"></app-meetup-card>
+    <p class="meetups__empty-message" *ngIf="filteredMeetups?.length === 0 && !loading">
+        У тебя пока нет митапов :(
+    </p>
+</div>

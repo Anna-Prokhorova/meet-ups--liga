@@ -1,0 +1,24 @@
+
+    <div class="modal-form__modal modal" mat-dialog-content>
+        <h2 class="modal__title">Создание пользователя</h2>
+        <form class="modal__form form" [formGroup]="userForm">
+            <div class="form__group group">
+                <label class="group__label">Почта: </label>
+                <input class="group__input" type="email" formControlName="email" autocomplete="off">
+            </div>
+            <div class="form__group group">
+                <label class="group__label">Пароль: </label>
+                <input class="group__input" type="password" formControlName="password" autocomplete="off">
+            </div>
+            <div class="form__group group">
+                <label class="group__label">ФИО: </label>
+                <input class="group__input" type="text" formControlName="fio">
+            </div>
+            <div class="form__buttons buttons">
+                <p *ngIf="userForm.invalid" class="form__helper">Заполните все поля!</p>
+                <button class="buttons__item _save" [disabled]="userForm.invalid" (click)="saveUser()">сохранить</button>
+                <button class="buttons__item" (click)="onCancel()">отмена</button>
+            </div>
+        </form>
+    </div>
+

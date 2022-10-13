@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'meet-ups--liga';
+  constructor(public themeService: ThemeService){}
+
+  changeTheme() {
+    this.themeService.setDarkTheme()
+    document.body.classList.toggle('_dark');
+  }
 }

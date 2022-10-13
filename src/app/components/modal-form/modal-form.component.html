@@ -1,0 +1,51 @@
+
+    <div class="modal-form__modal modal" mat-dialog-content>
+        <h2 class="modal__title">{{data ? 'Редактирование митапа' : 'Создание митапа'}}</h2>
+        <form class="modal__form form" [formGroup]="meetupForm">
+            <div class="form__group group">
+                <label class="group__label">Название: </label>
+                <input class="group__input" type="text" formControlName="name">
+            </div>
+            <div class="group _small">
+                <div class="form__group group">
+                    <label class="group__label">Дата: </label>
+                    <input class="group__input _small" type="date" formControlName="date">
+                </div>
+                <div class="form__group group">
+                    <label class="group__label">Время: </label>
+                    <input class="group__input _small" type="time" formControlName="time">
+                </div>
+            </div>
+            <div class="form__group group">
+                <label class="group__label">Место: </label>
+                <input class="group__input" type="text" formControlName="location">
+            </div>
+            <div class="form__group group">
+                <label class="group__label">Описание: </label>
+                <textarea class="group__input _big"  formControlName="description"></textarea>
+            </div>
+            <div class="form__group group">
+                <label class="group__label">Целевая аудитория: </label>
+                <textarea class="group__input _big"  formControlName="target_audience"></textarea>
+            </div>
+            <div class="form__group group">
+                <label class="group__label">Что надо знать: </label>
+                <textarea class="group__input _big" formControlName="need_to_know"></textarea>
+            </div>
+            <div class="form__group group">
+                <label class="group__label">Что будет: </label>
+                <textarea class="group__input _big" formControlName="will_happen"></textarea>
+            </div>
+            <div class="form__group group">
+                <label class="group__label">Почему надо обязательно прийти: </label>
+                <textarea class="group__input _big" formControlName="reason_to_come"></textarea>
+            </div>
+            <div class="form__buttons buttons">
+                <p *ngIf="meetupForm.invalid" class="form__helper">Заполните все поля!</p>
+                <button class="buttons__item _delete" *ngIf="data ? true: false" (click)="deleteMeetup()">удалить</button>
+                <button type="button" class="buttons__item _save" [disabled]="meetupForm.invalid" (click)="saveMeetup()">сохранить</button>
+                <button class="buttons__item" (click)="onCancel()">отмена</button>
+            </div>
+        </form>
+    </div>
+

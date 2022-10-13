@@ -1,0 +1,112 @@
+.modal {
+    max-width: 1000px;
+    height: 1000px;
+    margin: 1.75rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    background-color: var(--pre-main);
+    background-clip: padding-box;
+    border-radius: 0.3rem;
+    outline: 0;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 32px;
+
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 25px;
+        color: var(--dark);
+        margin-bottom: 25px;
+    }
+
+}
+
+.form {
+    width: 800px;
+    &__group {
+        margin-bottom: 40px;
+    }
+    &__buttons {
+
+    }
+
+    &__helper {
+        color: red;
+        margin: 0;
+        font-size: 14px;
+    }
+
+}
+
+.group {
+    display: flex;
+    align-items: center;
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--dark);
+        width: 100px;
+        display: block;
+    }
+
+    &__input {
+        background: var(--pre-main);
+        border: 1px solid var(--accent-cold);
+        border-radius: 4px;
+        width: 267px;
+        height: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--dark);
+        box-sizing: border-box;
+
+        &._small {
+            width: 191px;
+        }
+
+        &._big {
+            width: 88%;
+            height: 90px;
+            resize: none;
+            outline: none;
+        }
+    }
+
+    &._small {
+        justify-content: space-between;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__item {
+        width: 148px;
+        height: 30px;
+        background: var(--dark);
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--main);
+        margin-left: 12px;
+
+        &._delete {
+            background: var(--accent-hot);
+        }
+        &._save {
+            background: var(--accent-cold);
+        }
+        &:disabled {
+            cursor: not-allowed;
+            background: var(--disabled);
+        }
+    }
+}

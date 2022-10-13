@@ -1,0 +1,53 @@
+<div class="meetup-card" [ngClass]="{'_opened': openedCardsService.getOpenedCards()?.includes(meetup.id), '_outdated': outdated}">
+    <header class="meetup-card__header header">
+        <div class="header__left note">
+            <h3 class="note__title">{{meetup.name}}</h3>
+            <p class="note__subtitle">{{meetup.users.length}} подписчик</p>
+        </div>
+        <div class="header__right note">
+            <h3 class="note__title">{{meetup.time | date: 'dd.MM.yy HH:mm'}}</h3>
+            <p class="note__subtitle">{{meetup.location}}</p>
+        </div>
+    </header>
+    <main class="meetup-card__main main">
+        <p class="main__content">{{meetup.description}}</p>
+        <div class="main__content-more content" [ngClass]="{'_visible': openedCardsService.getOpenedCards()?.includes(meetup.id)}">
+            <h4 class="content__title">Целевая аудитория</h4>
+            <p class="content__text">{{meetup.target_audience}}</p>
+            <h4 class="content__title">Что надо знать?</h4>
+            <p class="content__text">{{meetup.need_to_know}}</p>
+            <h4 class="content__title">Что будет?</h4>
+            <p class="content__text">{{meetup.will_happen}}</p>
+            <h4 class="content__title">Почему надо обязательно пойти?</h4>
+            <p class="content__text">{{meetup.reason_to_come}}</p>
+        </div>
+    </main>
+    <footer class="meetup-card__footer footer">
+        <div class="footer__creator sign"> 
+            <img [src]="isDark ? '../../../assets/images/dark-user-mini.svg':'../../../assets/images/user-mini.svg'" alt="user picture" class="sign__image">
+            <p class="sign__author">{{meetup.owner.fio}}</p>
+        </div>
+        <div class="footer__buttons buttons">
+            <div>
+            <button class="buttons__item _positive" *ngIf="!check() && !(this.meetup.createdBy === this.authService.user.id) && !outdated" (click)="addFollower(meetup)">
+                Я пойду!
+            </button>
+            <button class="buttons__item _cantGo" *ngIf="check() && !(this.meetup.createdBy === this.authService.user.id) && !outdated" (click)="deleteFollower(meetup)">
+                Не смогу прийти
+            </button>
+            <button class="buttons__item _positive" *ngIf="meetup.createdBy === this.authService.user.id && !outdated" (click)="showModal(meetup)">
+                Редактировать
+            </button>
+            <button class="buttons__item _positive" *ngIf="meetup.createdBy === this.authService.user.id && outdated" (click)="deleteMeetup(meetup)">
+                Удалить
+            </button>
+        </div>
+            <button class="buttons__item _more" (click)="showMore(meetup)" *ngIf="!openedCardsService.getOpenedCards()?.includes(meetup.id)">
+                Подробно
+            </button>
+            <button class="buttons__item _more" (click)="showLess(meetup)" *ngIf="openedCardsService.getOpenedCards()?.includes(meetup.id)">
+                Скрыть
+            </button>
+        </div>
+    </footer>
+</div>

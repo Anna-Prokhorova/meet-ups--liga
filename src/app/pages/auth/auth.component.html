@@ -1,0 +1,16 @@
+<div class="auth">
+    <img [src]="isDark ? '../../../assets/images/dark-big-banner.svg':'../../../assets/images/big-banner.svg'" class="auth__banner">
+    <form class="auth__form form" [formGroup]="authForm">
+        <h1 class="form__title">АВТОРИЗАЦИЯ</h1>
+        <div class="form__group">
+            <input class="form__input" placeholder="введите логин" name="login" formControlName="login" type="email">
+            <p class="form__helper" *ngIf="authForm.controls['login'].invalid && authForm.controls['login'].touched">Введите логин, например: example@mail.ru</p>
+        </div>
+        <div class="form__group">
+            <input class="form__input" placeholder="введите пароль" name="password" formControlName="password" type="password">
+            <p class="form__helper" *ngIf="authForm.controls['password'].invalid && authForm.controls['password'].touched">Введите пароль</p>
+        </div>
+        <button class="form__button" (click)="loginAuth()" [disabled]="authForm.invalid">войти</button>
+        <a routerLink='/about' routerLinkActive='active' class="form__register">Как получить аккаунт?</a>
+    </form>
+</div>

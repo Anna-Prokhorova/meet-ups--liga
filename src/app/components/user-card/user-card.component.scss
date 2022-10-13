@@ -1,0 +1,46 @@
+.user-card {
+    display: flex;
+    align-items: center;
+
+    &__input {
+        width: 272px;
+        height: 35px;
+        background: var(--pre-main);
+        border: 2px solid var(--borders);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        color: var(--dark);
+        text-align: center;
+        box-sizing: border-box;
+        outline: none;
+
+        &._right {
+            border-radius: 4px 0px 0px 4px;
+            border-width: 2px 0px 2px 2px;
+        }
+
+        &._left {
+            border-radius: 0px 4px 4px 0px;
+            border-width: 2px 2px 2px 0px;
+            width: 136px;
+        }
+
+        &:disabled {
+            opacity: 0.7;
+        }
+    }
+
+    &__button {
+        background: transparent;
+        margin-left: 10px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}

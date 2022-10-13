@@ -1,0 +1,9 @@
+<form class="search">
+    <input type="text" class="search__input" placeholder="Поиск . . ." [(ngModel)]="searchValue" (input)="searchService.setsearchValue(searchValue)" name="hehe">
+    <select class="search__filter" [(ngModel)]="filterValue" (change)="searchService.setfilterValue(filterValue)" name="haha">
+        <option value="">по умолчанию</option>
+        <option value="popular">популярные</option>
+        <option value="soon">по дате</option>
+        <option value="go">я иду</option>
+    </select>
+</form>

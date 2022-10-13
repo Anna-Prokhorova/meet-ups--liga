@@ -1,0 +1,112 @@
+.modal-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.modal {
+    max-width: 1000px;
+    height: auto;
+    margin: 1.75rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    background-color: var(--pre-main);
+    background-clip: padding-box;
+    border-radius: 0.3rem;
+    outline: 0;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 32px;
+
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 25px;
+        color: var(--dark);
+        margin-bottom: 25px;
+    }
+
+}
+
+.form {
+    width: 800px;
+    &__group {
+        margin-bottom: 40px;
+    }
+    &__buttons {
+
+    }
+    &__helper {
+        color: red;
+        margin: 0;
+        font-size: 14px;
+    }
+
+}
+
+.group {
+    display: flex;
+    align-items: center;
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--dark);
+        width: 100px;
+        display: block;
+    }
+
+    &__input {
+        background: var(--pre-main);
+        border: 1px solid var(--accent-cold);
+        border-radius: 4px;
+        width: 88%;
+        height: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--dark);
+        box-sizing: border-box;
+        outline: none;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__item {
+        width: 148px;
+        height: 30px;
+        background: var(--dark);
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--main);
+        margin-left: 12px;
+
+        &._delete {
+            background: var(--accent-hot);
+        }
+        &._save {
+            background: var(--accent-cold);
+        }
+        &:disabled {
+            background: var(--disabled);
+            cursor: not-allowed;
+        }
+    }
+}

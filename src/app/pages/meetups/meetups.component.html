@@ -1,0 +1,7 @@
+<div class="meetups">
+    <app-spinner *ngIf="loading"></app-spinner>
+    <p class="meetups__empty-message" *ngIf="searchMeetups()?.length === 0 && !loading">
+        По твоему запросу ничего не найдено :(
+    </p>
+    <app-meetup-card *ngFor="let m of searchMeetups()" [meetup]="m" class="meetups__item"></app-meetup-card>
+</div>

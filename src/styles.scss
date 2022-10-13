@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+:root {
+    font: inherit;
+}
+
+* {
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+body {
+    margin: 0;
+    --dark: #2E186A;
+    --accent-cold: #5D21D1;
+    --accent-hot: #FE7624;
+    --dull: #FEBA91;
+    --main: #fff;
+    --pre-main: #fff;
+    --disabled: #CECBCB;
+    --borders: #584688;
+
+    &._dark {
+        --dark: #20BAA3;
+        --accent-cold: #20BAA3;
+        --accent-hot: #D92762;
+        --dull: #E3A322;
+        --main: #1B1C22;
+        --pre-main: #25262C;
+        --disabled: #747373;
+        --borders: #20BAA3;
+    }
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+  }
+
+html, body { height: 100%; }
+
+.mat-dialog-container {
+    box-shadow: none;
+    background: none;
+    color: none;
+}
